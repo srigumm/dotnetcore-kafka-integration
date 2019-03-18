@@ -16,11 +16,12 @@ Let's take a simple use case of e-commerce company. Assume we are building a sim
 ![architecture diagram](https://raw.githubusercontent.com/srigumm/dotnetcore-kafka-integration/master/Api/Images/architecture.png)
 
 ### Prerequisites:
- VSCODE or some .net code editor
- .NET Core 2.1
- Docker
- KAFKA Installation and Topics setup
- Kafkacat command line tool
+
+ - VSCODE or some .net code editor
+ - .NET Core 2.1
+ - Docker
+ - KAFKA Installation and Topics setup
+ - Kafkacat command line tool
 
 ### How to install KAFKA in local??
 - It's easy to setup KAFKA in local using docker containers.
@@ -30,7 +31,7 @@ Let's take a simple use case of e-commerce company. Assume we are building a sim
              git clone https://github.com/TribalScale/kafka-waffle-stack.git
              cd kafaka-waffle-stack
              docker-compose up
-   Above instructions should start a KAFKA server, and you can use the broker localhost:9092 to produce/consumer message.
+   Above instructions should start a KAFKA server, and you can use the broker localhost:9092 to produce/consumer messages.
 - Creating a new topic in local KAFKA:
     producing a sample message to a topic using kafkacat utility would create topic if it doesn't exist.
     so, run the below command and give some sample message like {"id":1234,"productname":"Unicorn Whistles","quantity":3}
