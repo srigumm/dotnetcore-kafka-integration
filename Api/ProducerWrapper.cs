@@ -17,6 +17,9 @@ namespace Api
             this._topicName = topicName;
             this._config = config;
             this._producer = new Producer<string,string>(this._config);
+            this._producer.OnError += (_,e)=>{
+                Console.WriteLine("Exception:"+e);
+            };
         }
         public async Task writeMessage(string message){
             var dr = await this._producer.ProduceAsync(this._topicName, new Message<string, string>()

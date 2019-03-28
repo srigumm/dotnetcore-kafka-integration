@@ -22,6 +22,11 @@ Let's take a simple use case of e-commerce company. Assume we are building a sim
  - Docker
  - KAFKA Installation and Topics setup
  - Kafkacat command line tool
+ - If you are connecting to Kerberos-aware KAFKA Enterprise Instance, ensure the below things:
+    - Setup krb5.Conf file  with your organization's KDC details.
+    - Keep krb5.conf file in default path i.e /etc/ or specify the path with KRB5_CONFIG environment variable.
+    - Create Keytab file with your principal
+    - Make sure your/service account has atleast read access to krb5.conf file.
 
 ### How to install KAFKA in local??
 - It's easy to setup KAFKA in local using docker containers.
@@ -64,3 +69,9 @@ Let's take a simple use case of e-commerce company. Assume we are building a sim
 4. Verify if new messages were written to readytoship topic using kafkacat utility:
 
        kafkacat -b localhost:9092 -t readytoship -C
+
+### Troubleshooting tips:
+- If your producer/consumer is not responding at all, then verify your keytab file with below steps
+
+     kinit username@MYDOMAIN.COM -k -t username.keytab
+    you should get authenticated successfully (without being prompted for a password).
