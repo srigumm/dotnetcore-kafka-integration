@@ -73,5 +73,5 @@ Let's take a simple use case of e-commerce company. Assume we are building a sim
 ### Troubleshooting tips:
 - If your producer/consumer is not responding at all, then verify your keytab file with below steps
 
-     kinit username@MYDOMAIN.COM -k -t username.keytab
+      kinit username@MYDOMAIN.COM -k -t username.keytab
     you should get authenticated successfully (without being prompted for a password).
